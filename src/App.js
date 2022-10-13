@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { Routes } from 'react-router';
+import AllEventsPage from "./pages/AllEvents";
+import NewEventPage from "./pages/NewEvent";
+import TopEventsPage from "./pages/TopEvents";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <Routes>
+          <Route path="/events/" element={<AllEventsPage />} />
+          <Route path="/events/new" element={<NewEventPage />} />
+          <Route path="/events/top" element={<TopEventsPage />} />
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
