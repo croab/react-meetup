@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 
 class EventCard extends Component {
-  constructor(props) {
-    super(props);
+  handleClick = () => {
+    // console.log("In the handleClick function");
+    // console.log(this.props);
+    this.props.updateSelectedEventId(this.props.id);
   }
+
   render() {
-    const { id, title, description, location, price } = this.props;
+    const { id, title, location, price } = this.props;
     if (!id) {
       return null;
     }
     return (
-      <div>
+      <div onClick={this.handleClick}>
         <h3>{title}</h3>
         <p>{location}</p>
-        <p>{description}</p>
         <p>{price}</p>
       </div>
     );

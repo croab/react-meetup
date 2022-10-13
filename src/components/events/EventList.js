@@ -1,17 +1,17 @@
 import React from "react";
 import EventCard from "./EventCard";
 
-const EventList = ({ events }) => {
+const EventList = ({ events, updateSelectedEventId }) => {
   return (
     <div>
-      {events.map(({ id, title, description, location, price }) => {
+      {events.map(({ id, title, location, price }) => {
         return <EventCard
           id={id}
           key={id}
           title={title}
-          description={description}
           location={location}
           price={price}
+          updateSelectedEventId={updateSelectedEventId}
         />
       })}
     </div>

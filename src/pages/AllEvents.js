@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EventList from "./../components/events/EventList";
+import EventShow from "./../components/events/EventShow";
 
 const DATA = [
   {
@@ -36,14 +37,33 @@ class AllEventsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedEventId: null,
       events: DATA
     };
   }
+
+  updateSelectedEventId = (eventId) => {
+    console.log(this.state.selectedEventId);
+    this.setState({
+      selectedEventId: eventId
+    });
+  }
+
+  // findSelectedEvent
+
   render() {
     return (
       <div>
         <h1>Events</h1>
-        <EventList events={this.state.events} />
+        <div className='left-screen'>
+          <EventList
+            events={this.state.events}
+            updateSelectedEventId={this.updateSelectedEventId}
+          />
+        </div>
+        <div className='right-screen'>
+          {/* <EventShow event={this.state.selectedEvent}/> */}
+        </div>
       </div>
     );
   }
