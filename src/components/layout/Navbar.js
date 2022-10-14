@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <header>
       <div>
-        <p className={classes.logo}>Logo here</p>
+        <img src={require('./../../images/placeholder-logo.jpeg')} alt="" class={classes.logo} />
       </div>
       <nav>
         <ul>

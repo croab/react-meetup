@@ -1,0 +1,13 @@
+.eventsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.leftScreen {
+  grid-column: 1;
+}
+
+.rightScreen {
+  grid-column: 2;
+}

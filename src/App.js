@@ -4,20 +4,20 @@ import { Routes } from 'react-router';
 import AllEventsPage from "./pages/AllEvents";
 import NewEventPage from "./pages/NewEvent";
 import TopEventsPage from "./pages/TopEvents";
-import Navbar from "./components/layout/Navbar";
+
+import Layout from "./components/ui/Layout";
 
 class App extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
+      <Layout>
         <Routes>
           <Route path="/events/" element={<AllEventsPage />} />
           <Route path="/events/new" element={<NewEventPage />} />
           <Route path="/events/top" element={<TopEventsPage />} />
         </Routes>
-      </div>
+      </Layout>
     );
   }
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Card from "./../ui/Card";
+
 class EventCard extends Component {
   handleClick = () => {
     // console.log("In the handleClick function");
@@ -13,11 +15,13 @@ class EventCard extends Component {
       return null;
     }
     return (
-      <div onClick={this.handleClick}>
-        <h3>{title}</h3>
-        <p>{location}</p>
-        <p>{price}</p>
-      </div>
+      <Card>
+        <div onClick={this.handleClick}>
+          <h3>{title}</h3>
+          <p>{location}</p>
+          <p>{price}</p>
+        </div>
+      </Card>
     );
   }
 }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import EventList from "./../components/events/EventList";
 import EventShow from "./../components/events/EventShow";
 
+import classes from "./AllEvents.module.css";
+
+
 const DATA = [
   {
     id: "1",
@@ -37,32 +40,33 @@ class AllEventsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedEventId: null,
+      selectedEvent: null,
       events: DATA
     };
   }
 
   updateSelectedEventId = (eventId) => {
-    console.log(this.state.selectedEventId);
+    const event = DATA.find((eventItem) => eventItem.id === eventId);
+    console.log(event);
     this.setState({
-      selectedEventId: eventId
+      selectedEvent: event
     });
   }
-
-  // findSelectedEvent
 
   render() {
     return (
       <div>
         <h1>Events</h1>
-        <div className='left-screen'>
-          <EventList
-            events={this.state.events}
-            updateSelectedEventId={this.updateSelectedEventId}
-          />
-        </div>
-        <div className='right-screen'>
-          {/* <EventShow event={this.state.selectedEvent}/> */}
+        <div className={classes.eventsContainer}>
+          <div className={classes.leftScreen}>
+            <EventList
+              events={this.state.events}
+              updateSelectedEventId={this.updateSelectedEventId}
+            />
+          </div>
+          <div className={classes.rightScreen}>
+            <EventShow event={this.state.selectedEvent}/>
+          </div>
         </div>
       </div>
     );
