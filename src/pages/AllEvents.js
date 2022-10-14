@@ -55,8 +55,8 @@ class AllEventsPage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Events</h1>
+      <section>
+        <h1>All Events</h1>
         <div className={classes.eventsContainer}>
           <div className={classes.leftScreen}>
             <EventList
@@ -68,7 +68,7 @@ class AllEventsPage extends Component {
             <EventShow event={this.state.selectedEvent}/>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
