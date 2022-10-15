@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 import NewMeetupForm from "./../components/events/NewEventForm";
 
 const NewEventPage = () => {
+  const navigate = useNavigate();
   const handleAddEvent = (eventData) => {
     fetch(
-      'url_where_request_sent/events',
+      'https://react-meetup-9db72-default-rtdb.europe-west1.firebasedatabase.app/events.json',
       {
         method: 'POST',
         body: JSON.stringify(eventData),
@@ -11,7 +14,9 @@ const NewEventPage = () => {
           'Content-Type': 'application/json'
         }
       }
-    );
+    ).then(() => {
+      navigate('/events', { replace: true });
+    });
   }
   return (
     <section>
