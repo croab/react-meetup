@@ -1,3 +1,8 @@
+<h1>React App Practice</h1>
+
+<p>A free Firebase realtime database was used in the development of this project and so is recommended that the same be done here. Head to https://console.firebase.google.com/ and create a new project > Build (left navbar) > Realtime Database. Select 'test' database on setup. You will be provided with a url for the database. Simply copy this URL (!!! with the trailing forward slash!!!) and add it to a .env file with the key REACT_APP_FIREBASE</p>
+<p>Following this, run npm start in the terminal 😁.</p>
+
 <!---
 # Getting Started with Create React App
 
