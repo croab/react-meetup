@@ -6,7 +6,7 @@ const NewEventPage = () => {
   const navigate = useNavigate();
   const handleAddEvent = (eventData) => {
     fetch(
-      'https://react-meetup-9db72-default-rtdb.europe-west1.firebasedatabase.app/events.json',
+      process.env.REACT_APP_FIREBASE,
       {
         method: 'POST',
         body: JSON.stringify(eventData),

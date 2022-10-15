@@ -42,7 +42,7 @@ function AllEventsPage() {
   const [selectedEvent, setSelectedEvent] = useState({});
 
   useEffect(() => {
-    fetch("https://react-meetup-9db72-default-rtdb.europe-west1.firebasedatabase.app/events.json")
+    fetch(process.env.REACT_APP_FIREBASE)
       .then(response => response.json())
       .then((data) => {
         const events = [];
